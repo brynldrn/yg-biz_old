@@ -1,0 +1,43 @@
+{# <ul class="navbar-nav ml-auto">
+    <li class="nav-item menu-active">
+        <a class="nav-link  js-scroll-trigger" href="/">HOME</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="about.html">ABOUT</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="services.html">SERVICES</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="portfolio.html">PORTFOLIO</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="blog.html">BLOG</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="contact.html">CONTACT</a>
+    </li>
+</ul> #}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+        <ul class="navbar-nav ml-auto">
+            {% for item in items %}
+                <li class="nav-item {{ item.in_active_trail ? 'menu-active' : '' }}">
+                    {{ link(item.title, item.url, { 'class': ['nav-link', 'js-scroll-trigger'] }) }}
+                    {% if item.below %}
+                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

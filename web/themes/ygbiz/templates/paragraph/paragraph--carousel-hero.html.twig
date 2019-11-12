@@ -1,0 +1,28 @@
+<section id="banner-slider">
+    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            {% for key in content.field_carousel_item|keys %}
+                {% if key matches '/^\\d+$/' %}
+                    <li data-target="#carouselIndicators" data-slide-to="{{ key }}" class=""></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <div class="carousel-inner" role="listbox">
+            {% for key, item in content.field_carousel_item %}
+                {% if key matches '/^\\d+$/' %}
+                    {{ kint(item) }}
+                    <div class="carousel-item">
+                        {{ item.field_carousel_item_image }}
+                        <img src="{{ item['#paragraph'].get('field_carousel_item_image').getValue() }}" alt="banner_1">
+                        <div class="carousel-caption d-none d-md-block wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1>{{ item['#paragraph'].get('field_carousel_item_title').value }}</h1>
+                            {{ item['#paragraph'].get('field_carousel_item_body').value }}
+                            <a href="about.html" class="btn btn-link btn-infos">Read More</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

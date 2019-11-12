@@ -1,0 +1,17 @@
+name: YG Biz
+type: theme
+description: YG Biz theme
+core: 8.x
+logo: logo.png
+screenshot: screenshot.png
+regions:
+  header: Header
+  content: Content
+  ads: Advertisements
+  footer: Footer
+  page_top: Page Top
+  page_bottom: Page Bottom
+libraries:
+  - core/normalize
+  - ygbiz/global-css
+  # - ygbiz/roboto

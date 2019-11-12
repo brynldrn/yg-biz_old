@@ -1,0 +1,20 @@
+global-css:
+  version: 1.0
+  css:
+    base:
+      css/fontawesome.min.css: {}
+      css/bootstrap.min.css: {}
+      css/animate.css: {}
+      css/custom.css: {}
+      css/carousel.css: {}
+      css/magnific-popup.css: {}
+      //fonts.googleapis.com/css?family=Roboto|Roboto+Slab:300,400:
+        { type: external }
+# roboto:
+#   license:
+#     name: SIL Open Font License 1.1
+#     url: http://scripts.sil.org/cma/scripts/page.php?site_id=nrsi$id=OFL
+#   css:
+#     theme:
+#     //fonts.googleapis.com/css?family=Roboto|Roboto+Slab:300,400:
+#       { type: external }
