@@ -1,20 +1,26 @@
-global-css:
+global:
   version: 1.0
   css:
     base:
       css/fontawesome.min.css: {}
       css/bootstrap.min.css: {}
+      css/magnific-popup.css: {}
+      css/carousel.css: {}
       css/animate.css: {}
       css/custom.css: {}
-      css/carousel.css: {}
-      css/magnific-popup.css: {}
       //fonts.googleapis.com/css?family=Roboto|Roboto+Slab:300,400:
         { type: external }
-# roboto:
-#   license:
-#     name: SIL Open Font License 1.1
-#     url: http://scripts.sil.org/cma/scripts/page.php?site_id=nrsi$id=OFL
-#   css:
-#     theme:
-#     //fonts.googleapis.com/css?family=Roboto|Roboto+Slab:300,400:
-#       { type: external }
+  js:
+    js/wow.min.js: {}
+    js/carousel.js: {}
+    js/owl.carousel.min.js: {}
+    js/magnific-popup.min.js: {}
+    js/gallery.js: {}
+    js/main.js: {}
+
+bootstrap-js:
+  header: true
+  js:
+    js/jquery.min.js: {}
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {}

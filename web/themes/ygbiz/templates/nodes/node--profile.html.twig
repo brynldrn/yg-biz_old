@@ -1,0 +1,15 @@
+{{ content.field_profile_image }}
+<div class="services-caption">
+    <h5>{{ content.field_profile_name }}</h5>
+    <p>{{ content.field_profile_delegation }}</p>
+    <div class="social">
+        {% for key, item in content.field_profile_social_links %}
+            {% if key matches '/^\\d+$/' %}
+                {# <a href="#" class="twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a> #}
+                {{ item }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

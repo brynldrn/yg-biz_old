@@ -1,0 +1,33 @@
+<?php
+
+// function ygbiz_preprocess_paragraph__carousel_hero_item(&$variables) {
+//   $paragraph = $variables['paragraph'];
+//   if ( !$paragraph->field_carousel_item_image->isEmpty() ) {
+//     $image = $paragraph->field_carousel_item_image->entity->url();
+//     $variables['url'] = $image;
+//   }
+// }
+
+function ygbiz_preprocess_field__profile_social_links(&$variables) {
+  $sn['social_keys'] = $variables['content']['field_social_network_platform'][0]['#markup'];
+  $sn['social_urls'] = $variables['content']['field_social_network_url'][0]['#title'];
+
+  $variables['sn'] = $sn;
+}
+
+function ygbiz_preprocess_field__field_service_image(&$variables) {
+  // kint($variables);
+}
+
+function ygbiz_preprocess_paragraph__pricing_list_item(&$variables) {
+  $features = array();
+
+  foreach ($variables['content']['field_pricing_list_feature'] as $key => $value) {
+     if ( is_numeric($key) ) {
+      $features[] = $value['#paragraph']->get('field_plain_text')->getString();
+      // kint($value);
+     }
+  }
+
+  $variables['features'] = $features;
+}

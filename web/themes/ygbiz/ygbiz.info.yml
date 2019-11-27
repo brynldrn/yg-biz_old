@@ -9,9 +9,11 @@ regions:
   content: Content
   ads: Advertisements
   footer: Footer
+  copyright: Copyright
   page_top: Page Top
   page_bottom: Page Bottom
 libraries:
   - core/normalize
-  - ygbiz/global-css
+  - ygbiz/global
+  - ygbiz/bootstrap-js
   # - ygbiz/roboto

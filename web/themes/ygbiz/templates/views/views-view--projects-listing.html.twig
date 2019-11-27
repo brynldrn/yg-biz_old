@@ -1,0 +1,14 @@
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'row',
+  ]
+%}
+<p>{{ header }}</p>
+<div{{attributes.addClass(classes)}}>
+    {% if rows -%}
+        {{ rows }}
+    {% elseif empty -%}
+        {{ empty }}
+    {% endif %}
+</div>

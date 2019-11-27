@@ -1,0 +1,18 @@
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'row',
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
+    {% if rows -%}
+        <div class="testimonial owl-carousel owl-theme">
+            {{ rows }}
+        </div>
+    {% elseif empty -%}
+        {{ empty }}
+    {% endif %}
+</div>

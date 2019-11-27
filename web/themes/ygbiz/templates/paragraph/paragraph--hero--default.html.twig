@@ -1,0 +1,20 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+    <section {{attributes.addClass(classes)}} id="about-banner">
+        {% block content %}
+            {{ content.field_hero_image }}
+            <div class="about-banner-caption mx-auto">
+                <h1>
+                    <span>{{ content.field_hero_label }}</span>
+                </h1>
+            </div>
+        {% endblock %}
+    </section>
+{% endblock paragraph %}

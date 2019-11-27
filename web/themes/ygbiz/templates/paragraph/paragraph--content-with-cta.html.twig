@@ -1,0 +1,19 @@
+{% block paragraph %}
+    <section id="about" class="sub text-center wow fadeInUp" {{ attributes }}>
+        <div class="container">
+            <h2>{{ content.field_content_title }}
+            </h2>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 about-page-img wow fadeInLeft">
+                    {{ content.field_content_image }}
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 about-page-description wow fadeInRight">
+                    {{ content.field_content_body }}
+                </div>
+            </div>
+            {% if content.field_content_cta %}
+                {{ link('Read More', 'http://google.com', { 'class': ['btn', 'btn-infos'] }) }}
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

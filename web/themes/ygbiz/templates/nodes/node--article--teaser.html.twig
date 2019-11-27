@@ -1,0 +1,18 @@
+<div class="col-md-12 col-sm-12" {{ attributes }}>
+	<a href="blog-details.html">
+		{{ content.field_article_image }}
+	</a>
+	<div class="blog-caption">
+		<h5>
+			<a href="{{ url }}">{{ label }}</a>
+		</h5>
+		{{ content.body }}
+		<div class="blog-info">
+			<i class="fa fa-clock-o" aria-hidden="true"></i>
+			{{ date }}
+			<i class="fa fa-user" aria-hidden="true"></i>
+			{{ author_name }}
+		</div>
+		<a href="{{ url }}" class="btn btn-infos float-right">Read More</a>
+	</div>
+</div>

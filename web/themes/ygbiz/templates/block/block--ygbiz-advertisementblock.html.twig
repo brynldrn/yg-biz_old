@@ -1,0 +1,14 @@
+<section id="call-to-action" class="wow fadeInUp" {{attributes}}>
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>{{ content.field_ad_text.0['#text']|raw }}</h2>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ content.field_ad_link.0['#url'] }}" class="btn btn-infos">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</section>
